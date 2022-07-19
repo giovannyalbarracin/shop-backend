@@ -1,0 +1,22 @@
+{
+  "name": "shop-backend",
+  "version": "1.0.0",
+  "description": "backend repo for AWS course",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giovannyalbarracin/shop-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giovannyalbarracin/shop-backend/issues"
+  },
+  "homepage": "https://github.com/giovannyalbarracin/shop-backend#readme",
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
+}

@@ -1,1 +1,21 @@
+service: shop-backend
 
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  getProductList:
+    handler: handler.getProductList
+    events:
+      - http:
+          path: products
+          method: get
+  getProductById:
+    handler: handler.getProductById
+    events:
+      - http:
+          path: products/{productId}
+          method: get
