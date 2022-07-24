@@ -1,11 +1,10 @@
-const products = require('../data/products.json');
+import * as products from '../data/products.json';
 
- async function getProductList() {
-
-  return {
-    statusCode: 200,
-    body: JSON.stringify(products),
-  }
+export default function productList() {
+  return new Promise(function(resolve, reject) {
+    resolve({
+      statusCode: 200,
+      body: JSON.stringify(products),
+    });
+  });
 }
-
-module.exports = getProductList;

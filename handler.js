@@ -1,14 +1,21 @@
-'use strict';
-const getProductList = require('./handlers/getProductList');
-const getProductById = require('./handlers/getProductById');
+import productList from './handlers/getProductList';
+import productById from './handlers/getProductById';
+const header = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Credentials': true,
+};
 
-module.exports.getProductList = async (event) => {
-  return getProductList();
+export const getProductList = async (event) => {
+  const products = await productList();
+  products.headers = header;
+  return products;
 };
 
 
 
-module.exports.getProductById = async (event) => {
+export const getProductById = async (event) => {
   const { productId } = event.pathParameters;
-  return getProductById(productId);
+  const product = await productById(productId);
+  product.headers = header;
+  return product;
 };
