@@ -19,3 +19,10 @@ export const getProductById = async (event) => {
   product.headers = header;
   return product;
 };
+
+export const createProduct = async (event) => {
+  const {product} = JSON.parse(event.body);
+  const result = await createProduct(product);
+  result.headers = header;
+  return result;
+}
